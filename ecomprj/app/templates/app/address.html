@@ -1,0 +1,44 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block title %}Adress{% endblock title %}
+
+{%block main-content%}
+<div class="container my-5 flex-grow-1">
+    <div class="row">
+        <h3>Welcome <span class="text-capitalize">{{ request.user }}</span></h3>
+    
+        <div class="col-sm-2 border-end">
+            <ul class="list-unstyled">
+                <li class="d-grid"><a href="{% url 'profile' %}" class="btn ">Profile</a></li>
+                <li class="d-grid"><a href="{% url 'address' %}" class="btn btn-primary">Address</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-8 offset-sm-1">
+            <div class="row">
+                {% for add in address %}
+                <div class="col-sm-6">
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h3>Address {{forloop.counter}}</h3>
+                            <p>Name: {{add.name}}</p>
+                            <p>Locality: {{add.locality}}</p>
+                            <p>Mobile: {{add.mobile}}</p>
+                            <p>City: {{add.city}}</p>
+                            <p>State: {{add.state}}</p>
+                            <p>Zipcode: {{add.zipcode}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{% url 'updateAddress' pk=add.id %}" type="button" class="btn btn-success">Update</a>
+                                <form method="post" action="{% url 'delete_address' pk=add.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+{%endblock main-content %}

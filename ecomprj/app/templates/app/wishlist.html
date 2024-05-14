@@ -1,0 +1,33 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Wishlist{% endblock title %}
+
+{% block main-content %}
+<div class="container my-5 flex-grow-1">
+    <div class="row">
+        {% if product %}
+            {% for prod in product %}
+                <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <a href="{% url 'product-detail' prod.product.id %}">
+                            <img src="{{ prod.product.product_image.url }}" class="card-img-top" alt="Product Image" style="height: 200px; object-fit: contain;">
+                        </a>
+                        <div class="card-body">
+                            <a href="{% url 'product-detail' prod.product.id %}" class="card-title fw-bold stretched-link">{{ prod.product.title }}</a>
+                            <p class="card-text fw-bold text-danger">
+                                Usd.$ {{ prod.product.discount_price }} /-
+                                <small class="fw-light text-decoration-line-through">{{ prod.product.selling_price }}</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12 text-center">
+                <h1 class="text-center mb-5">Your wishlist is empty.</h1>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock main-content %}

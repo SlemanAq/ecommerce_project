@@ -1,0 +1,238 @@
+{% extends "app/base.html" %} {%load static%} {%block title %}Home{% endblock title%} {% block banner-slider%}
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+      src="{% static 'app/images/Banners/Books2.jpg' %}"
+        class="d-block w-100 img-fluid"
+        style="height: 75vh"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+      src="{% static 'app/images/Banners/books3.jpg' %}"
+        class="d-block w-100 img-fluid"
+        style="height: 75vh"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% endblock banner-slider %} {% block information%} {% comment %}
+<div class="container-fluid p-0">
+  <div
+    class="row m-0 text-center p-5 border-bottom shadow"
+    style="background-color: rgb(87, 35, 0)"
+  >
+    <div class="col-12 align-self-center">
+      <h1 style="color: rgb(255, 242, 0)">Welcome to E-Books Store</h1>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+<div class="spacer" style="height: 50px"></div>
+<div class="text-center">
+  <h1>Why E-Books Store ?</h1>
+</div>
+<div>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-4 container text-center">
+        <i class="fas fa-award m-2" style="font-size: 7em; color: #f3ab12"></i>
+        <h5 class="">Monthly subscription</h5>
+      </div>
+
+      <div class="col-md-4 container text-center">
+        <i
+          class="fa-solid fa-hand-holding-dollar m-2"
+          style="font-size: 7em; color: #f3ab12"
+        ></i>
+        <h5 class="">Best Price</h5>
+      </div>
+
+      <div class="col-md-4 container text-center">
+        <i
+          class="fa-solid fa-rocket m-2"
+          style="font-size: 7em; color: #f3ab12"
+        ></i>
+        <h5 class="">Fast Shipping</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock information %} {% block main-content %}
+<section style="background-color: #eee">
+  <div class="container py-5">
+    <h4 class="text-center mb-5"><strong>Books Catagory</strong></h4>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded">
+          <img src="{% static 'app/images/Love Bo.jpg' %}" class="w-100" />
+          <a href="{% url 'category' 'IC'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Romance</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded">
+          <img
+          src="{% static 'app/images/Fan Bo.jpg' %}"
+            class="w-100"
+          />
+          <a href="{% url 'category' 'WC'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Historical</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded">
+          <img src="{% static 'app/images/His Bo.jpg' %}" class="w-100" />
+          <a href="{% url 'category' 'BC'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Fantasy</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4">
+        <div
+          class="bg-image hover-zoom ripple shadow-1-strong rounded ripple-surface"
+        >
+          <img src="{% static 'app/images/My Bo.jpg' %}" class="w-100" />
+          <a href="{% url 'category' 'WI'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Mystrey</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded">
+          <img src="{% static 'app/images/Science Fiction Book.jpg' %}" class="w-100" />
+          <a href="{% url 'category' 'AI'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Science</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="bg-image hover-zoom ripple shadow-1-strong rounded">
+          <img src="{% static 'app/images/Autobiography Books.jpg' %}" class="w-100" />
+          <a href="{% url 'category' 'VI'%}" style="text-decoration: none">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+              <div class="d-flex justify-content-start align-items-start h-100">
+                <h5>
+                  <span class="badge bg-light pt-2 ms-3 mt-3 text-dark"
+                    >Autobiography</span
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="hover-overlay">
+              <div
+                class="mask"
+                style="background-color: rgba(253, 253, 253, 0.15)"
+              ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock main-content %}
